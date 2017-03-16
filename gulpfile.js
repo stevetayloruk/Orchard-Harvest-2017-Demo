@@ -30,9 +30,9 @@ require("events").EventEmitter.prototype._maxListeners = 100;
 */
 
 // Incremental build (each asset group is built only if one or more inputs are newer than the output).
-gulp.task("build", function () {
-    var assetGroupTasks = getAssetGroups().map(function (assetGroup) {
-        var doRebuild = false;
+gulp.task("build",  ()=> {
+    let assetGroupTasks = getAssetGroups().map(function (assetGroup) {
+        const doRebuild = false;
         return createAssetGroupTask(assetGroup, doRebuild);
     });
     return merge(assetGroupTasks);

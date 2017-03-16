@@ -1,0 +1,7 @@
+﻿@model Orchard.AdditionalSiteSettings.Models.AdditionalSettings
+    
+<fieldset class="form-group" asp-validation-class-for="Subtitle">
+    <label asp-for="Subtitle">@T["Subtitle of your site"] <span asp-validation-for="Subtitle"></span></label>
+    <input asp-for="Subtitle" class="form-control" />
+    <span class="hint">@T["A strap line for your site"]</span>
+</fieldset>

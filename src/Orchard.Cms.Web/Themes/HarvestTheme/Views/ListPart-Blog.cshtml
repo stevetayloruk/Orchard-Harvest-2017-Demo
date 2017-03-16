@@ -1,0 +1,38 @@
+﻿@{
+    IEnumerable<dynamic> contentItems = Model.ContentItems;
+}
+
+@if (contentItems.Any())
+{
+    @foreach (var contentItemSummary in contentItems)
+    {
+        @await DisplayAsync(contentItemSummary)
+    }
+}
+
+@{ 
+    Model.Pager.PreviousText = T["Newer Posts"];
+    Model.Pager.NextText = T["Older Posts"];
+    Model.Pager.PreviousClass = "previous";
+    Model.Pager.NextClass = "next";
+    Model.Pager.PagerId = "Blog";
+}
+
+
+
+
+<zone name="Paging">
+    <div class="wrapper">
+        <div class="page-navigation clear">
+            <div class="underline"></div>
+            <hr>
+            <h3 class="screen-reader-text">Posts navigation</h3>
+            @*<div class="nav-previous"><a href="https://demo.themegrill.com/masonic/page/2/"><span><i class="fa fa-arrow-circle-o-left"></i></span> Older posts</a></div>*@
+            @await DisplayAsync(Model.Pager)
+
+        </div><!-- .navigation -->
+        <div class="underline"></div>
+        <hr>
+    </div>
+    @*@await DisplayAsync(Model.Pager)*@
+</zone>

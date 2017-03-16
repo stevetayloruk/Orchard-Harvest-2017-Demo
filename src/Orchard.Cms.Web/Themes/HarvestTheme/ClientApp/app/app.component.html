@@ -1,0 +1,6 @@
+﻿<div class="widget-title"><h3>Newsletter</h3></div>
+<div>
+    <input type="text" name="newsletter" placeholder="enter your email address" class="newsletter__email" [(ngModel)]="subscribedEmail"/>
+    <button class="newsletter__btn" (click)="subscribe()">Subscribe</button>
+    <p class="newsletter__message" [hidden]="!submitted" [innerHTML]="'Thanks! You have signed up with: ' + subscribedEmail"></p>
+</div>

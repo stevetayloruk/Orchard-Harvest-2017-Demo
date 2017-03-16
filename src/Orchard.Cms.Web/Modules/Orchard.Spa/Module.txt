@@ -1,0 +1,9 @@
+﻿Name: Spa
+AntiForgery: enabled
+Author: Steve Taylor
+Website: http://orchardproject.net
+Version: 2.0.x
+OrchardVersion: 2.0.x
+Description: Adds SPA capabilities.
+Dependencies:
+Category: Theming

@@ -1,0 +1,21 @@
+﻿<header id="masthead" class="site-header clear">
+    @await RenderSectionAsync("Header", required: false)
+
+    <div class="site-branding clear">
+        <div class="wrapper site-header-text clear">
+            <div class="main-header">
+                <h1 class="site-title"><a href="/" rel="home">@Model.ContentItem.SiteName</a></h1>
+                <p class="site-description">@Model.Additional.Subtitle</p>
+            </div>
+        </div>
+    </div>
+
+    <navigation />
+
+    <div class="inner-wrap masonic-search-toggle">
+        <search />
+    </div>
+
+    @await RenderSectionAsync("PostHeader", required: false)
+    
+</header>

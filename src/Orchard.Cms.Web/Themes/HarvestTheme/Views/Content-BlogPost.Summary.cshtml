@@ -1,0 +1,27 @@
+﻿<article class="post-container post-11 post type-post status-publish format-standard has-post-thumbnail hentry category-leisure category-travel tag-leisure tag-travel masonry-brick" style="position: absolute; left: 388px; top: 0px;">
+    <h2 class="entry-title"><a display-for="@Model.ContentItem">@Model.ContentItem.Content.TitlePart.Title</a></h2>
+    <div class="wider-web-top">
+        <i class="fa fa-2x fa-caret-down"></i>
+    </div>
+    <figure>
+        <a display-for="@Model.ContentItem" title="@Model.ContentItem.Content.TitlePart.Title">
+            <img width="350" height="205" src="@OrDefault(Model.ContentItem.Content.BlogPost.HeaderImageUrl.Text, "https://www.stevetaylor.me.uk/Media/Default/files/cars-traffic-street-new-york-tn.jpg")" class="attachment-small-thumb size-small-thumb wp-post-image" alt="">
+        </a>
+    </figure>
+
+    <div class="entry-info">
+        <div class="entry-date fa fa-clock-o">
+        <a display-for="@Model.ContentItem" title="@Model.ContentItem.CreatedUtc.ToString("MMMM dd, yyyy")">
+            <time class="entry-date published" datetime="@Model.ContentItem.CreatedUtc.ToString("MMMM dd, yyyy")">@Model.ContentItem.CreatedUtc.ToString("MMMM dd, yyyy")</time>
+            </a></div>
+    <div class="entry-author vcard author fa fa-user">
+        @Model.ContentItem.Author</div>
+    </div>
+
+    <div class="entry-content">
+        <p>@Model.ContentItem.Content.BlogPost.Subtitle.Text</p>
+
+        <a class="button" display-for="@Model.ContentItem">@T["Read more"]</a>
+    </div>
+
+</article>

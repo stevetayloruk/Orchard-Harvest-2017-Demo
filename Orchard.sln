@@ -9,7 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		gulpfile.js = gulpfile.js
 		NuGet.config = NuGet.config
 		Package.json = Package.json
+		postcss.config.js = postcss.config.js
 		README.md = README.md
+		tsconfig.json = tsconfig.json
+		webpack.config.js = webpack.config.js
+		webpack.config.vendor.js = webpack.config.vendor.js
 	EndProjectSection
 	ProjectSection(FolderGlobals) = preProject
 		global_1json__JSONSchema = http://json.schemastore.org/global
@@ -218,6 +222,14 @@ EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Orchard.Widgets", "src\Orchard.Cms.Web\Modules\Orchard.Widgets\Orchard.Widgets.xproj", "{874AF752-83B1-4595-AACD-B18D4A8C464C}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Orchard.Layers", "src\Orchard.Cms.Web\Modules\Orchard.Layers\Orchard.Layers.xproj", "{766929F5-8CAB-4FF0-920E-7E806A6BB14D}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Orchard.AdditionalSiteSettings", "src\Orchard.Cms.Web\Modules\Orchard.AdditionalSettings\Orchard.AdditionalSiteSettings.xproj", "{A0FE1467-CD26-4A49-BCED-7B196EE32090}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Orchard.Spa", "src\Orchard.Cms.Web\Modules\Orchard.Spa\Orchard.Spa.xproj", "{B72DEBF8-5AB7-485B-9575-F3CFF6848E1D}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HarvestTheme", "src\Orchard.Cms.Web\Themes\HarvestTheme\HarvestTheme.xproj", "{B6973B52-B349-492F-B404-BD948E9212C9}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DemoTheme", "src\Orchard.Cms.Web\Themes\DemoTheme\DemoTheme.xproj", "{06ECE9AA-65D6-48F2-A38B-6CEC84315082}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -597,6 +609,22 @@ Global
 		{766929F5-8CAB-4FF0-920E-7E806A6BB14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{766929F5-8CAB-4FF0-920E-7E806A6BB14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{766929F5-8CAB-4FF0-920E-7E806A6BB14D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0FE1467-CD26-4A49-BCED-7B196EE32090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0FE1467-CD26-4A49-BCED-7B196EE32090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0FE1467-CD26-4A49-BCED-7B196EE32090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0FE1467-CD26-4A49-BCED-7B196EE32090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72DEBF8-5AB7-485B-9575-F3CFF6848E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72DEBF8-5AB7-485B-9575-F3CFF6848E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72DEBF8-5AB7-485B-9575-F3CFF6848E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72DEBF8-5AB7-485B-9575-F3CFF6848E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6973B52-B349-492F-B404-BD948E9212C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6973B52-B349-492F-B404-BD948E9212C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6973B52-B349-492F-B404-BD948E9212C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6973B52-B349-492F-B404-BD948E9212C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06ECE9AA-65D6-48F2-A38B-6CEC84315082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06ECE9AA-65D6-48F2-A38B-6CEC84315082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06ECE9AA-65D6-48F2-A38B-6CEC84315082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06ECE9AA-65D6-48F2-A38B-6CEC84315082}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -702,5 +730,9 @@ Global
 		{874AF752-83B1-4595-AACD-B18D4A8C464B} = {90030E85-0C4F-456F-B879-443E8A3F220D}
 		{874AF752-83B1-4595-AACD-B18D4A8C464C} = {90030E85-0C4F-456F-B879-443E8A3F220D}
 		{766929F5-8CAB-4FF0-920E-7E806A6BB14D} = {90030E85-0C4F-456F-B879-443E8A3F220D}
+		{A0FE1467-CD26-4A49-BCED-7B196EE32090} = {90030E85-0C4F-456F-B879-443E8A3F220D}
+		{B72DEBF8-5AB7-485B-9575-F3CFF6848E1D} = {90030E85-0C4F-456F-B879-443E8A3F220D}
+		{B6973B52-B349-492F-B404-BD948E9212C9} = {AF3BADEA-CC93-4116-B3C1-F8D074EBEE4F}
+		{06ECE9AA-65D6-48F2-A38B-6CEC84315082} = {AF3BADEA-CC93-4116-B3C1-F8D074EBEE4F}
 	EndGlobalSection
 EndGlobal

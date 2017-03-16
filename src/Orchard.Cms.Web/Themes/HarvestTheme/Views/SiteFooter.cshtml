@@ -1,0 +1,47 @@
+﻿@inject Orchard.Settings.ISiteService SiteService
+@{
+    var site = await SiteService.GetSiteSettingsAsync();
+}
+<footer class="footer-background">
+    <div class="footer-content wrapper clear">
+        <div class="clear">
+            <div class="tg-one-third">
+                <aside id="search-2" class="widget widget_search">
+                    <div class="widget-title"><h3>Search</h3></div>
+                   <search />
+                </aside>
+                <aside id="tag_cloud-2" class="widget widget_tag_cloud">
+                    <div class="widget-title"><h3>Tags</h3></div><div class="tagcloud">
+                        <a href="@Url.Action("Index", "Search", new { area = "Lucene", q = "liberty" })" class="tag-link-13 tag-link-position-1" title="1 topic" style="font-size: 22pt;">liberty</a>
+                        <a href="@Url.Action("Index", "Search", new { area = "Lucene", q = "empire" })" class="tag-link-3 tag-link-position-2" title="1 topic" style="font-size: 8pt;">empire</a>
+                        <a href="@Url.Action("Index", "Search", new { area = "Lucene", q = "taxis" })" class="tag-link-9 tag-link-position-3" title="1 topic" style="font-size: 8pt;">taxi</a>
+                        <a href="@Url.Action("Index", "Search", new { area = "Lucene", q = "central" })" class="tag-link-19 tag-link-position-4" title="1 topic" style="font-size: 12pt;">central</a>
+                        <a href="@Url.Action("Index", "Search", new { area = "Lucene", q = "terminal" })" class="tag-link-6 tag-link-position-9" title="1 topic" style="font-size: 8pt;">terminal</a>
+                        <a href="@Url.Action("Index", "Search", new { area = "Lucene", q = "station" })" class="tag-link-14 tag-link-position-10" title="1 topic" style="font-size: 18pt;">station</a>
+                        <a href="@Url.Action("Index", "Search", new { area = "Lucene", q = "cab" })" class="tag-link-23 tag-link-position-11" title="1 topic" style="font-size: 22pt;">cab</a>
+                        <a href="@Url.Action("Index", "Search", new { area = "Lucene", q = "park" })" class="tag-link-24 tag-link-position-12" title="1 topic" style="font-size: 8pt;">park</a>
+                    </div>
+                </aside>
+            </div>
+            <div class="tg-one-third">
+                <aside id="categories-3" class="widget widget_categories">
+                    <div class="widget-title"><h3>Categories</h3></div>		
+                    <menu alias="alias:categories" cache-id="categories" cache-duration="00:05:00" cache-tag="alias:categories" />
+                    <newsletter-signup></newsletter-signup>
+                </aside>
+            </div>
+            <div class="tg-one-third last">
+                <aside id="rpwe_widget-2" class="widget rpwe_widget recent-posts-extended">
+                    @await RenderSectionAsync("FooterThird", required: false)
+                </aside>
+            </div>
+            
+        </div>
+        <div class="copyright clear">
+            <div class="copyright-header">@site.SiteName</div>
+            <div class="copyright-year">© @DateTime.Now.Year</div>
+            Powered by <a href="http://www.orchardproject.net" target="_blank" title="Orchard"><span>Orchard</span></a> <br> Theme: Masonic by <a href="http://themegrill.com/themes/masonic" target="_blank" title="ThemeGrill" rel="author"><span>ThemeGrill</span></a>
+        </div>
+    </div>
+    <div class="angled-background"></div>
+</footer>

@@ -1,0 +1,39 @@
+﻿<zone name="PostHeader">
+    @await DisplayAsync(New.Breadcrumbs(ContentItem: Model.ContentItem))
+</zone>
+
+<div class="primary">
+    <article class="blog-post post-17 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="post-header clear">
+            <figure>
+                <img width="570" height="255" src="@OrDefault(Model.ContentItem.Content.BlogPost.HeaderImageUrl.Text, "https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-clean-blog/master/img/post-bg.jpg")" class="attachment-large-thumb size-large-thumb wp-post-image" alt="">
+            </figure>
+
+            <div class="entry-info">
+                <div class="catagory-type"><a href="https://demo.themegrill.com/masonic/category/uncategorized/" rel="category tag">Uncategorized</a></div>
+            <div class="entry-date fa fa-clock-o"><a href="#" title="@Model.ContentItem.PublishedUtc.ToString("MMMM dd, yyyy")" rel="bookmark">
+                <time class="entry-date published" datetime="@Model.ContentItem.PublishedUtc.ToString("MMMM dd, yyyy")">@Model.ContentItem.PublishedUtc.ToString("MMMM dd, yyyy")</time>
+                <time class="updated" datetime="@Model.ContentItem.PublishedUtc.ToString("MMMM dd, yyyy")">@Model.ContentItem.PublishedUtc.ToString("MMMM dd, yyyy")</time></a></div>
+            <div class="entry-author vcard author fa fa-user"><a class="url fn n" href="#">@Model.ContentItem.Author</a></div>     
+             </div>
+        </div>
+
+        <div class="entry-content">
+            <div class="underline"></div>
+            <hr>
+            @await DisplayAsync(New.BodyAspect(ContentItem: Model.ContentItem))
+            <div class="extra-hatom-entry-title"><span class="entry-title">My Super Hero</span></div>
+        </div>
+    </article>
+
+    @await DisplayAsync(Model.Content.Named("Contents_Metadata"))
+</div>
+
+<div class="secondary">
+    <aside id="recent-posts-2" class="blog-post widget widget_recent_entries">
+        <div class="widget-title">
+            <h3>Recent Posts</h3>
+        </div>
+        <menu alias="alias:recent-posts" />
+    </aside>
+</div>

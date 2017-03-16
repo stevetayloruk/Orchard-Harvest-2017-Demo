@@ -1,0 +1,18 @@
+﻿
+<zone name="PostHeader">
+    @await DisplayAsync(New.Breadcrumbs(ContentItem: Model.ContentItem))
+</zone>
+
+<div class="primary">
+    @await DisplayAsync(Model.Content.Named("Contents_Metadata"))
+    @await DisplayAsync(New.BodyAspect(ContentItem: Model.ContentItem))
+</div>
+
+<div class="secondary">
+    <aside id="recent-posts-2" class="blog-post widget widget_recent_entries">
+        <div class="widget-title">
+            <h3>Recent Posts</h3>
+        </div>
+        <menu alias="alias:recent-posts" />
+    </aside>
+</div>

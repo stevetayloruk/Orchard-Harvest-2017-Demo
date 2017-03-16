@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNetCore.Routing
+
+@{
+    var RouteValues = (object)((dynamic)Model).RouteValues;
+    RouteValueDictionary rvd;
+
+    if (RouteValues == null)
+    {
+        rvd = new RouteValueDictionary();
+    }
+    else
+    {
+        rvd = RouteValues as RouteValueDictionary ?? new RouteValueDictionary(RouteValues);
+    }
+
+    var route = Url.Action(rvd["action"].ToString(), rvd["controller"].ToString(), rvd as RouteValueDictionary);
+}
+<div class="nav-previous"><a href="@route"><span><i class="fa fa-arrow-circle-o-left"></i></span> @Model.Value</a></div>

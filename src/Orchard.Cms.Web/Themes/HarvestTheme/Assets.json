@@ -1,0 +1,18 @@
+﻿[
+  {
+    "generateSourceMaps": false,
+    "inputs": [
+      "assets/vendor/masonic.css",
+      "Assets/Scss/blog.scss"
+    ],
+    "output": "Content/Styles/blog.css"
+  },
+  {
+    "inputs": [
+      "assets/scripts/skip-link-focus-fix.js",
+      "assets/scripts/search-toggle.js",
+      "assets/scripts/masonry-setting.js"
+    ],
+    "output": "Content/Scripts/blog.js"
+  }
+]

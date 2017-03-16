@@ -1,0 +1,55 @@
+﻿@using Orchard.ContentManagement
+@using Orchard.Settings;
+@using Orchard.AdditionalSiteSettings.Models
+@inject ISiteService SiteService
+@inject IContentManager ContentManager
+@{
+    var site = await SiteService.GetSiteSettingsAsync();
+    var additional = site.As<AdditionalSettings>();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@RenderTitleSegments(T[site.SiteName], "before")</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="image/x-icon" rel="shortcut icon" href="HarvestTheme/favicon.ico" />
+    <script src="/HarvestTheme/Scripts/polyfills.js"></script>
+    <script asp-name="jQuery" use-cdn="true" at="Foot"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" at="Foot"></script>
+    <script src="/HarvestTheme/Scripts/blog.js" at="Foot"></script>
+    <link href="/HarvestTheme/Styles/blog.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <style asp-name="font-awesome" use-cdn="true"></style>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <resources type="Meta" />
+    <resources type="HeadLink" />
+    <resources type="Stylesheet" />
+    <resources type="HeadScript" />
+</head>
+<body class="home blog group-blog">
+    <div id="page" class="hfeed site">
+
+        @await DisplayAsync(New.Heading(ContentItem: site, Additional: additional))
+
+
+
+        <div class="site-content">
+            <div id="container" class="wrapper clear">
+                @await RenderBodyAsync()
+            </div>
+            @await RenderSectionAsync("Paging", required: false)
+        </div>
+    </div>
+
+    <sitefooter />
+
+    <script src="~/HarvestTheme/vendor.js" asp-append-version="true"></script>
+    <script src="~/HarvestTheme/main.js" asp-append-version="true"></script>
+
+    <resources type="FootScript" />
+</body>
+</html>
